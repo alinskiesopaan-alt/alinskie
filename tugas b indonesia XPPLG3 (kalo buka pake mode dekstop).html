@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biografi Linus Torvalds</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: #1f2937;
+      color: #f9fafb;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.75rem;
+      letter-spacing: 0.05em;
+      user-select: none;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    }
+    main {
+      flex: 1;
+      display: flex;
+      max-width: 1200px;
+      margin: 2rem auto;
+      gap: 2rem;
+      padding: 0 1rem;
+    }
+    nav {
+      flex: 0 0 220px;
+      background: #fff;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+      padding: 1rem;
+      position: sticky;
+      top: 2rem;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    nav li {
+      margin-bottom: 1rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #374151;
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: block;
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      transition: background-color 0.3s, color 0.3s;
+      cursor: pointer;
+    }
+    nav a:hover,
+    nav a.active {
+      background-color: #3b82f6;
+      color: white;
+    }
+    nav .group-title {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #1e40af;
+      margin-bottom: 0.75rem;
+      border-bottom: 2px solid #3b82f6;
+      padding-bottom: 0.25rem;
+      user-select: none;
+    }
+    nav .members-list li {
+      font-weight: 500;
+      font-size: 1rem;
+      color: #4b5563;
+      margin-bottom: 0.5rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+    nav .members-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #3b82f6;
+      font-weight: bold;
+    }
+    section.content-section {
+      flex: 1;
+      background: white;
+      border-radius: 0.5rem;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+      overflow-y: auto;
+      max-height: 80vh;
+      scroll-behavior: smooth;
+    }
+    .photo-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .photo-info-grid img {
+      width: 100%;
+      border-radius: 0.5rem;
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    .photo-info-grid img:hover {
+      transform: scale(1.05);
+    }
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #1e40af;
+    }
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: #2563eb;
+    }
+    p, li {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #4b5563;
+    }
+    ul {
+      padding-left: 1.25rem;
+      margin-top: 0.5rem;
+    }
+    blockquote {
+      border-left: 4px solid #3b82f6;
+      padding-left: 1rem;
+      font-style: italic;
+      color: #2563eb;
+      background: #e0e7ff;
+      margin: 1rem 0;
+      border-radius: 0.25rem;
+      user-select: none;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #6b7280;
+      user-select: none;
+      border-top: 1px solid #e5e7eb;
+      margin-top: auto;
+    }
+    /* Scrollbar for content */
+    section.content-section::-webkit-scrollbar {
+      width: 8px;
+    }
+    section.content-section::-webkit-scrollbar-thumb {
+      background-color: #3b82f6;
+      border-radius: 4px;
+    }
+    section.content-section::-webkit-scrollbar-track {
+      background: #f3f4f6;
+    }
+  </style>
+</head>
+<body>
+  <header>Biografi Linus Torvalds X PPLG3</header>
+  <main>
+    <nav aria-label="Navigasi konten dan anggota kelompok">
+      <ul>
+        <li><a href="#bio" class="active">Biografi Singkat</a></li>
+        <li><a href="#journey">Perjalanan Hidup dan Karier</a></li>
+        <li><a href="#contrib">Kontribusi Teknologi</a></li>
+        <li><a href="#awards">Penghargaan</a></li>
+        <li><a href="#events">Peristiwa Penting</a></li>
+        <li><a href="#facts">Fakta Menarik</a></li>
+      </ul>
+      <div class="group-title" tabindex="0">Anggota Kelompok</div>
+      <ul class="members-list" aria-label="Daftar anggota kelompok">
+        <li>Alinskie</li>
+        <li>Putra</li>
+        <li>Rendi</li>
+        <li>Reihan</li>
+      </ul>
+    </nav>
+    <section class="content-section" tabindex="0">
+      <article id="bio" class="mb-8">
+        <div class="photo-info-grid">
+          <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTSMDS4dZUh7hocuf2PdU1wyNoXZePWKorceHfzIJE31YUKjLG9pE_lDcpq_Y-nsmjOE4O7WHAgNRHOO6V4jX0xmoDdMXtViJ8-RW9un7X-VQ" alt="Foto Linus Torvalds" />
+          <div>
+            <h2>Biografi Singkat</h2>
+            <p><strong>Nama lengkap:</strong> Linus Benedict Torvalds</p>
+            <p><strong>Tanggal lahir:</strong> 28 Desember 1969</p>
+            <p><strong>Tempat lahir:</strong> Helsinki, Finlandia</p>
+            <p><strong>Kebangsaan:</strong> Finlandia (keturunan Finlandia-Swedia)</p>
+            <p><strong>Pendidikan:</strong> Universitas Helsinki, jurusan Ilmu Komputer</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="journey" class="mb-8">
+        <h2>Perjalanan Hidup dan Karier</h2>
+        <h3>Awal Kehidupan dan Pendidikan</h3>
+        <p>Linus Torvalds berasal dari keluarga intelektual. Kedua orang tuanya adalah jurnalis, dan kakeknya seorang profesor statistik. Ia mulai tertarik pada komputer sejak usia muda dan belajar menggunakan komputer Commodore VIC-20 dan Sinclair QL. Ketertarikannya semakin kuat setelah ia menggunakan sistem operasi UNIX di universitas.</p>
+        <h3>Peristiwa Penting: Menciptakan Linux (1991)</h3>
+        <p>Pada tahun <strong>1991</strong>, saat masih menjadi mahasiswa di Universitas Helsinki, Linus merasa tidak puas dengan sistem operasi MINIX (sistem UNIX kecil yang dipakai untuk tujuan pendidikan). Ia memutuskan untuk membuat kernel sistem operasinya sendiri sebagai proyek hobi.</p>
+        <blockquote>"Hello everybody out there using minix - I'm doing a (free) operating system (just a hobby, won't be big and professional like gnu)..."</blockquote>
+        <p>Pesan ini diposting pada <strong>25 Agustus 1991</strong> di forum newsgroup comp.os.minix. Kemudian, pada <strong>17 September 1991</strong>, versi pertama Linux (v0.01) dirilis ke publik.</p>
+      </article>
+
+      <article id="contrib" class="mb-8">
+        <h2>Kontribusi terhadap Dunia Teknologi</h2>
+        <ul>
+          <li><strong>Linux Kernel:</strong> Linus terus memimpin pengembangan kernel Linux, yang menjadi inti dari berbagai distribusi sistem operasi berbasis Linux seperti Ubuntu, Debian, Fedora, dan lainnya.</li>
+          <li><strong>Open Source Movement:</strong> Linux menjadi simbol kekuatan perangkat lunak open-source. Ia menunjukkan bahwa proyek besar dapat dikembangkan secara kolaboratif oleh komunitas global.</li>
+          <li><strong>Git (2005):</strong> Linus juga menciptakan <strong>Git</strong>, sistem kontrol versi terdistribusi, karena ia tidak puas dengan sistem kontrol versi lain saat itu. Git kini digunakan oleh jutaan pengembang di seluruh dunia.</li>
+        </ul>
+      </article>
+
+      <article id="awards" class="mb-8">
+        <h2>Penghargaan dan Pengakuan</h2>
+        <ul>
+          <li>2000: Masuk ke dalam <strong>Hall of Fellows</strong> dari Computer History Museum.</li>
+          <li>2012: Menerima <strong>Millennium Technology Prize</strong> dari Technology Academy Finland.</li>
+          <li>Sering disebut sebagai salah satu orang paling berpengaruh di dunia teknologi.</li>
+        </ul>
+      </article>
+
+      <article id="events" class="mb-8">
+        <h2>Peristiwa Penting Lain</h2>
+        <ul>
+          <li><strong>2003:</strong> Pindah ke AS dan bekerja untuk Linux Foundation.</li>
+          <li><strong>2018:</strong> Mengambil cuti dari proyek Linux untuk introspeksi diri dan memperbaiki gaya komunikasi yang dianggap kasar oleh sebagian komunitas.</li>
+          <li><strong>2020:</strong> Linux merayakan 29 tahun, dan kini digunakan di jutaan perangkat – dari server hingga ponsel Android.</li>
+        </ul>
+      </article>
+
+      <article id="facts" class="mb-8">
+        <h2>Fakta Menarik</h2>
+        <ul>
+          <li>Nama "Linux" berasal dari gabungan nama "Linus" dan "Unix".</li>
+          <li>Ia tidak kaya raya seperti pendiri perusahaan teknologi besar, karena Linux bersifat open-source dan gratis. Namun, ia hidup nyaman dan dihormati secara luas.</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+  <footer>© kelompok gacor</footer>
+
+  <script>
+    // Navigasi aktif dan smooth scroll
+    const navLinks = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('section.content-section article');
+
+    function setActiveLink() {
+      let index = sections.length;
+
+      while(--index && window.scrollY + 150 < sections[index].offsetTop) {}
+      navLinks.forEach(link => link.classList.remove('active'));
+      navLinks[index].classList.add('active');
+    }
+
+    setActiveLink();
+    window.addEventListener('scroll', setActiveLink);
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
